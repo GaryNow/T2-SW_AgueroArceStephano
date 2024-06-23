@@ -18,13 +18,13 @@ public class FileService implements IFileService {
 
     @Override
     public void guardarArchivo(MultipartFile archivo) throws Exception {
-        validarTipoArchivo(archivo);
         Files.copy(archivo.getInputStream(), this.pathFolder.resolve(archivo.getOriginalFilename()));
     }
 
     @Override
     public void guardarArchivos(List<MultipartFile> archivosList) throws Exception {
         for(MultipartFile archivo: archivosList){
+            validarTipoArchivo(archivo);
             this.guardarArchivo(archivo);
         }
     }
