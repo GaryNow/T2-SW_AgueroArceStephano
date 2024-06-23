@@ -1,5 +1,6 @@
 package pe.edu.cibertec.t2sw_agueroarcestephano.model.bd;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
